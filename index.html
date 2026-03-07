@@ -21,8 +21,6 @@ color:white;
 text-align:center;
 }
 
-/* canvas bintang */
-
 canvas{
 position:fixed;
 top:0;
@@ -30,10 +28,27 @@ left:0;
 z-index:-1;
 }
 
-/* halaman awal */
+/* INTRO */
+
+#intro{
+position:absolute;
+font-size:70px;
+font-weight:bold;
+color:#ff4d6d;
+text-shadow:0 0 20px #ff4d6d;
+animation:fadeIntro 4s forwards;
+}
+
+@keyframes fadeIntro{
+0%{opacity:0;transform:scale(0.5);}
+50%{opacity:1;transform:scale(1);}
+100%{opacity:0;}
+}
+
+/* HALAMAN PEMBUKA */
 
 #welcome{
-display:flex;
+display:none;
 flex-direction:column;
 align-items:center;
 }
@@ -43,6 +58,8 @@ font-size:40px;
 margin-bottom:30px;
 }
 
+/* BUTTON */
+
 button{
 padding:15px 30px;
 font-size:18px;
@@ -51,14 +68,14 @@ border-radius:12px;
 background:#ff4d6d;
 color:white;
 cursor:pointer;
-box-shadow:0 0 15px rgba(255,0,100,0.6);
+box-shadow:0 0 20px rgba(255,0,100,0.7);
 }
 
 button:hover{
 background:#ff3355;
 }
 
-/* halaman pesan */
+/* HALAMAN PESAN */
 
 #pesan{
 display:none;
@@ -71,7 +88,7 @@ width:260px;
 max-width:80%;
 border-radius:20px;
 margin-top:20px;
-box-shadow:0 0 20px rgba(255,255,255,0.5);
+box-shadow:0 0 25px rgba(255,255,255,0.6);
 }
 
 #text{
@@ -81,7 +98,7 @@ white-space:pre-line;
 margin-top:20px;
 }
 
-/* hati jatuh */
+/* HATI JATUH */
 
 .heart{
 position:absolute;
@@ -95,7 +112,7 @@ animation:fall 5s linear infinite;
 100%{transform:translateY(110vh);}
 }
 
-/* shooting star */
+/* SHOOTING STAR */
 
 .shooting{
 position:absolute;
@@ -118,6 +135,8 @@ animation:shoot 1s linear;
 <body>
 
 <canvas id="stars"></canvas>
+
+<div id="intro">I LOVE YOU ❤️</div>
 
 <!-- HALAMAN PEMBUKA -->
 
@@ -144,6 +163,16 @@ animation:shoot 1s linear;
 </audio>
 
 <script>
+
+/* TAMPILKAN HALAMAN WELCOME SETELAH INTRO */
+
+setTimeout(()=>{
+
+document.getElementById("intro").style.display="none"
+
+document.getElementById("welcome").style.display="flex"
+
+},4000)
 
 /* PESAN */
 
@@ -252,7 +281,7 @@ star.remove()
 
 setInterval(shootingStar,4000)
 
-/* BINTANG BACKGROUND */
+/* BACKGROUND BINTANG */
 
 const canvas=document.getElementById("stars")
 
