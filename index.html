@@ -1,45 +1,87 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="id">
+
 <head>
+<meta charset="UTF-8">
 <title>Untuk Cantikku ❤️</title>
 
 <style>
+
 body{
 margin:0;
 height:100vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+background:black;
 font-family:Arial;
 overflow:hidden;
-}
-
-h1{
 color:white;
 text-align:center;
-font-size:28px;
-max-width:700px;
+}
+
+/* canvas bintang */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* halaman awal */
+
+#welcome{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+#welcome h1{
+font-size:40px;
+margin-bottom:30px;
 }
 
 button{
-padding:15px 25px;
+padding:15px 30px;
 font-size:18px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 background:#ff4d6d;
 color:white;
 cursor:pointer;
-margin-bottom:20px;
+box-shadow:0 0 15px rgba(255,0,100,0.6);
+}
+
+button:hover{
+background:#ff3355;
+}
+
+/* halaman pesan */
+
+#pesan{
+display:none;
+flex-direction:column;
+align-items:center;
 }
 
 img{
-width:250px;
+width:260px;
+max-width:80%;
 border-radius:20px;
 margin-top:20px;
+box-shadow:0 0 20px rgba(255,255,255,0.5);
 }
+
+#text{
+font-size:26px;
+max-width:700px;
+white-space:pre-line;
+margin-top:20px;
+}
+
+/* hati jatuh */
 
 .heart{
 position:absolute;
@@ -52,66 +94,224 @@ animation:fall 5s linear infinite;
 0%{transform:translateY(-10vh);}
 100%{transform:translateY(110vh);}
 }
+
+/* shooting star */
+
+.shooting{
+position:absolute;
+width:2px;
+height:100px;
+background:linear-gradient(white,transparent);
+transform:rotate(45deg);
+animation:shoot 1s linear;
+}
+
+@keyframes shoot{
+0%{opacity:1;transform:translate(0,0) rotate(45deg);}
+100%{opacity:0;transform:translate(300px,300px) rotate(45deg);}
+}
+
 </style>
 
 </head>
 
 <body>
 
-<button onclick="tampilPesan()">
-Read it, my dear ❤️
-</button>
+<canvas id="stars"></canvas>
 
-<div id="pesan" style="display:none; text-align:center;">
+<!-- HALAMAN PEMBUKA -->
 
-<img src="WhatsApp Image 2026-03-07 at 23.38.39.jpeg">
+<div id="welcome">
 
-<h1>
-Forr sayangkuu yang paling cantik sedunia ❤️<br><br>
+<h1>I HAVE A MESSAGE FOR YOU ❤️</h1>
 
-Sayangg, aku mek pengen bilangg terimakasih.<br>
-Why aku omong terimakasih?<br>
-Krna kamu wes kasih kesempatan ng aku,<br>
-kesempatan jadi seng lebih baik lagi.<br><br>
-
-Bahkan amu sek percoyo nde aku setelah aku wes gae amu kecewa kesekian kaline.<br>
-But sayang, kali ini aku ga janji,<br>
-tapi aku selalu usaha gae seng terbaik buat amu.<br><br>
-
-Karna amu se worth it itu sayang buat diusahakan.<br>
-Aku pernah nyia-nyiakne amu demi wong seng gaiso diusahakne, wkwkwk.<br>
-Aku juga ga nyongko aku sek dikei kesempatan mbe amu.<br><br>
-
-Aku usaha sayang, nek aku gakan nyiak-nyiakne kesempatan kali ini.<br>
-And kesalahanku yang dulu-dulu i am very very sorry.<br><br>
-
-Untuk sekarang aku bakal selalu berbuat terbaik gae amu.<br>
-Terimakasih banyak-banyak ya sayanggg.<br><br>
-
-Lovee u more than anything ❤️
-
-</h1>
+<button onclick="start()">Open it</button>
 
 </div>
 
+<!-- HALAMAN PESAN -->
+
+<div id="pesan">
+
+<img src="WhatsApp Image 2026-03-07 at 23.38.39.jpeg">
+
+<div id="text"></div>
+
+</div>
+
+<audio id="music" loop>
+<source src="SZA - Saturn.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-function tampilPesan(){
-document.getElementById("pesan").style.display="block";
+
+/* PESAN */
+
+const message = `For sayangku yang paling cantik sedunia ❤️
+
+Sayang, aku cuma ingin bilang terimakasih.
+Karena kamu masih kasih aku kesempatan,
+kesempatan buat jadi orang yang lebih baik lagi.
+
+Walaupun aku pernah bikin kamu kecewa,
+kamu masih percaya sama aku.
+
+Aku ga mau janji yang aneh-aneh,
+tapi aku bakal selalu berusaha
+jadi yang terbaik buat kamu.
+
+Karena kamu se-worth it itu
+buat diperjuangkan.
+
+Dan untuk semua kesalahanku dulu,
+I am very very sorry.
+
+Terimakasih banyak ya sayang ❤️
+
+Love u more than anything.`
+
+let i=0
+
+function typeText(){
+
+if(i < message.length){
+
+document.getElementById("text").innerHTML += message.charAt(i)
+
+i++
+
+setTimeout(typeText,40)
+
 }
+
+}
+
+/* START */
+
+function start(){
+
+document.getElementById("welcome").style.display="none"
+
+document.getElementById("pesan").style.display="flex"
+
+const music=document.getElementById("music")
+
+music.currentTime=50
+
+music.play()
+
+typeText()
+
+}
+
+/* HATI JATUH */
 
 function createHeart(){
-const heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"vw";
-document.body.appendChild(heart);
+
+const heart=document.createElement("div")
+
+heart.className="heart"
+
+heart.innerHTML="❤️"
+
+heart.style.left=Math.random()*100+"vw"
+
+document.body.appendChild(heart)
 
 setTimeout(()=>{
-heart.remove();
-},5000);
+
+heart.remove()
+
+},5000)
+
 }
 
-setInterval(createHeart,100);
+setInterval(createHeart,150)
+
+/* SHOOTING STAR */
+
+function shootingStar(){
+
+const star=document.createElement("div")
+
+star.className="shooting"
+
+star.style.left=Math.random()*window.innerWidth+"px"
+
+star.style.top=Math.random()*200+"px"
+
+document.body.appendChild(star)
+
+setTimeout(()=>{
+
+star.remove()
+
+},1000)
+
+}
+
+setInterval(shootingStar,4000)
+
+/* BINTANG BACKGROUND */
+
+const canvas=document.getElementById("stars")
+
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+
+canvas.height=window.innerHeight
+
+let stars=[]
+
+for(let i=0;i<200;i++){
+
+stars.push({
+
+x:Math.random()*canvas.width,
+
+y:Math.random()*canvas.height,
+
+size:Math.random()*2,
+
+speed:Math.random()*0.3
+
+})
+
+}
+
+function drawStars(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+ctx.fillStyle="white"
+
+stars.forEach(star=>{
+
+ctx.beginPath()
+
+ctx.arc(star.x,star.y,star.size,0,Math.PI*2)
+
+ctx.fill()
+
+star.y+=star.speed
+
+if(star.y>canvas.height){
+
+star.y=0
+
+star.x=Math.random()*canvas.width
+
+}
+
+})
+
+requestAnimationFrame(drawStars)
+
+}
+
+drawStars()
+
 </script>
 
 </body>
