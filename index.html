@@ -1,12 +1,15 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <title>Untuk Cantikku ❤️</title>
+
 <style>
 body{
 margin:0;
 height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
 background:linear-gradient(135deg,#ff9a9e,#fad0c4);
@@ -17,7 +20,25 @@ overflow:hidden;
 h1{
 color:white;
 text-align:center;
-font-size:40px;
+font-size:28px;
+max-width:700px;
+}
+
+button{
+padding:15px 25px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+img{
+width:250px;
+border-radius:20px;
+margin-top:20px;
 }
 
 .heart{
@@ -32,11 +53,16 @@ animation:fall 5s linear infinite;
 100%{transform:translateY(110vh);}
 }
 </style>
+
 </head>
 
 <body>
 
-<h1>
+<button onclick="tampilPesan()">
+Read it, my dear ❤️
+</button>
+
+<h1 id="pesan" style="display:none;">
 Forr sayangkuu yang paling cantik sedunia ❤️<br><br>
 
 Sayangg, aku mek pengen bilangg terimakasih.<br>
@@ -56,22 +82,19 @@ Aku usaha sayang, nek aku gakan nyiak-nyiakne kesempatan kali ini.<br>
 And kesalahanku yang dulu-dulu i am very very sorry.<br><br>
 
 Untuk sekarang aku bakal selalu berbuat terbaik gae amu.<br>
-Hahahah rasane aku koyo gapantes ngunu nerimo kesempatan iki,<br>
-butt tapi amu sek percoyo aku hehehe.<br><br>
+Terimakasih banyak-banyak ya sayanggg.<br><br>
 
-Terimakasih banyak-banyak ya sayanggg.<br>
-Always dadi putri ku seng tak kenal.<br>
-Happy teruss.<br><br>
-
-Nek ada apa-apa bilang ke aku,<br>
-I'll always be here for you.<br><br>
-
-Wkwk udah segitu aja sayangg.<br>
 Lovee u more than anything ❤️
+
 </h1>
-</h1>
-<img src="WhatsApp Image 2026-03-07 at 23.38.39.jpeg" width="250" style="border-radius:20px; margin-top:20px;">
+
+<img src="WhatsApp Image 2026-03-07 at 23.38.39.jpeg">
+
 <script>
+function tampilPesan(){
+document.getElementById("pesan").style.display="block";
+}
+
 function createHeart(){
 const heart=document.createElement("div");
 heart.className="heart";
