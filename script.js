@@ -1,3 +1,8 @@
+window.addEventListener("click",()=>{
+
+document.getElementById("music").play()
+
+})
 const rain = document.getElementById("rain")
 
 for(let i=0;i<150;i++){
