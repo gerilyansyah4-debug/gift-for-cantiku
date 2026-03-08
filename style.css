@@ -89,7 +89,7 @@ left:50%;
 transform:translate(-50%,-50%);
 }
 
-/* ukuran buku lebih besar */
+/* ukuran buku */
 
 #book{
 width:320px;
@@ -112,8 +112,8 @@ color:#ff4da6;
 }
 
 .page img{
-width:300px;
-height:360px;
+width:260px;
+height:320px;
 object-fit:cover;
 border-radius:10px;
 margin-bottom:10px;
@@ -125,29 +125,37 @@ color:black;
 font-family:cursive;
 }
 
-/* PHOTO LOVE */
+/* ANIMASI BOUQUET BUNGA */
 
-#photoHeart{
+#flowerBox{
 position:absolute;
-top:65%;
+top:55%;
 left:50%;
 transform:translate(-50%,-50%);
-width:340px;
-height:300px;
+font-size:80px;
+animation:flowerPop 2s ease;
 }
 
-#photoHeart img{
-position:absolute;
-width:75px;
-height:75px;
-border-radius:12px;
-object-fit:cover;
-animation:pop 1s ease;
+@keyframes flowerPop{
+
+0%{
+transform:translate(-50%,-200%) scale(0);
+opacity:0;
 }
 
-@keyframes pop{
-0%{transform:scale(0);}
-100%{transform:scale(1);}
+60%{
+transform:translate(-50%,-40%) scale(1.2);
+}
+
+100%{
+transform:translate(-50%,-50%) scale(1);
+opacity:1;
+}
+
+}
+
+.bouquet{
+text-align:center;
 }
 
 #finalQuestion{
@@ -164,30 +172,4 @@ position:absolute;
 bottom:60px;
 width:100%;
 font-size:26px;
-}
-@keyframes flyIn{
-0%{
-transform:scale(0) translateY(-200px);
-opacity:0;
-}
-100%{
-transform:scale(1) translateY(0);
-opacity:1;
-}
-}
-
-#photoHeart img{
-position:absolute;
-width:75px;
-height:75px;
-border-radius:12px;
-object-fit:cover;
-animation:flyIn 1s ease forwards;
-}
-@media (min-width:1024px){
-
-#photoHeart{
-bottom:150px;
-}
-
 }
