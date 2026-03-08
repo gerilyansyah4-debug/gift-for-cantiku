@@ -145,3 +145,28 @@ container.appendChild(img)
 typeLoveText()
 
 }
+function typeLoveText(){
+
+document.getElementById("finalText").classList.remove("hidden")
+
+let text="Apa kamu mau menjadi kekasihku lagi?"
+
+let i=0
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("loveText").innerHTML+=text.charAt(i)
+
+i++
+
+setTimeout(typing,80)
+
+}
+
+}
+
+typing()
+
+}
