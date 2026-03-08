@@ -1,4 +1,3 @@
-
 window.addEventListener("click",()=>{
 
 document.getElementById("music").play()
@@ -73,8 +72,8 @@ const pageFlip=new St.PageFlip(
 document.getElementById("book"),
 
 {
-width:420,
-height:520,
+width:520,
+height:650,
 showCover:true
 }
 
@@ -84,7 +83,7 @@ pageFlip.loadFromHTML(document.querySelectorAll(".page"))
 
 pageFlip.on("flip",(e)=>{
 
-if(e.data==8){
+if(e.data >= 8){
 
 setTimeout(()=>{
 
@@ -92,7 +91,7 @@ document.getElementById("bookContainer").style.display="none"
 
 showPhotoHeart()
 
-},1000)
+},1200)
 
 }
 
@@ -107,6 +106,8 @@ function showPhotoHeart(){
 let container=document.getElementById("photoHeart")
 
 container.classList.remove("hidden")
+
+container.innerHTML=""
 
 let photos=[
 
@@ -123,14 +124,14 @@ let photos=[
 
 let positions=[
 
-{top:0,left:120},
-{top:30,left:60},
-{top:30,left:180},
-{top:80,left:30},
+{top:40,left:150},
+{top:80,left:90},
 {top:80,left:210},
-{top:140,left:80},
-{top:140,left:160},
-{top:200,left:120}
+{top:140,left:60},
+{top:140,left:240},
+{top:210,left:110},
+{top:210,left:190},
+{top:270,left:150}
 
 ]
 
@@ -140,6 +141,16 @@ let img=document.createElement("img")
 
 img.src=src
 
+img.style.position="absolute"
+
+img.style.width="80px"
+
+img.style.height="80px"
+
+img.style.objectFit="cover"
+
+img.style.borderRadius="12px"
+
 img.style.top=positions[i].top+"px"
 
 img.style.left=positions[i].left+"px"
@@ -148,7 +159,11 @@ container.appendChild(img)
 
 })
 
+setTimeout(()=>{
+
 showQuestion()
+
+},2000)
 
 }
 
@@ -158,7 +173,9 @@ function showQuestion(){
 
 document.getElementById("finalQuestion").classList.remove("hidden")
 
-let text="Apa kamu mau menjadi kekasihku sekali lagi?"
+document.getElementById("loveText").innerHTML=""
+
+let text="Apakah kamu mau menjadi kekasihku sekali lagi?"
 
 let i=0
 
@@ -186,6 +203,8 @@ function showTyping(){
 
 document.getElementById("typing").classList.remove("hidden")
 
+document.getElementById("text").innerHTML=""
+
 let text="Aku masih sayang kamu. Jadi... maukah kamu kembali bersamaku? 💗"
 
 let i=0
@@ -205,5 +224,13 @@ setTimeout(typing,70)
 }
 
 typing()
+
+}
+
+
+
+function noAnswer(){
+
+alert("yahhh jangan gitu dong 😭 coba pikir lagi ya 💗")
 
 }
