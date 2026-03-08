@@ -74,13 +74,13 @@ pageFlip.loadFromHTML(document.querySelectorAll(".page"))
 
 pageFlip.on("flip",(e)=>{
 
-if(e.data==7){
+if(e.data==8){
 
 setTimeout(()=>{
 
 document.getElementById("bookContainer").style.display="none"
 
-document.getElementById("question2").classList.remove("hidden")
+showPhotoHeart()
 
 },1000)
 
