@@ -129,11 +129,11 @@ font-family:cursive;
 
 #photoHeart{
 position:absolute;
-top:55%;
+bottom:80px;
 left:50%;
-transform:translate(-50%,-50%);
-width:320px;
-height:280px;
+transform:translateX(-50%);
+width:340px;
+height:300px;
 position:relative;
 }
 
@@ -184,4 +184,11 @@ height:75px;
 border-radius:12px;
 object-fit:cover;
 animation:flyIn 1s ease forwards;
+}
+@media (min-width:1024px){
+
+#photoHeart{
+bottom:150px;
+}
+
 }
