@@ -129,7 +129,7 @@ font-family:cursive;
 
 #photoHeart{
 position:absolute;
-bottom:80px;
+bottom:60px;
 left:50%;
 transform:translateX(-50%);
 width:340px;
