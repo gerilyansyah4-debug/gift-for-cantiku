@@ -120,6 +120,8 @@ img.src=src
 img.style.top=positions[i].top+"px"
 img.style.left=positions[i].left+"px"
 
+img.style.animationDelay=(i*0.3)+"s"
+
 container.appendChild(img)
 
 })
