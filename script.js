@@ -66,7 +66,7 @@ if(e.data==8){
 
 setTimeout(()=>{
 document.getElementById("bookContainer").style.display="none"
-showPhotoHeart()
+showFlowers()
 },1000)
 
 }
@@ -77,56 +77,15 @@ showPhotoHeart()
 
 
 
-function showPhotoHeart(){
+function showFlowers(){
 
-let container=document.getElementById("photoHeart")
+let flower=document.getElementById("flowerBox")
 
-container.classList.remove("hidden")
+flower.classList.remove("hidden")
 
-let photos=[
-
-"WhatsApp Image 2026-03-07 at 23.38.39.jpeg",
-"WhatsApp Image 2026-03-08 at 13.25.51.jpeg",
-"WhatsApp Image 2026-03-08 at 13.25.52.jpeg",
-"WhatsApp Image 2026-03-08 at 13.25.53.jpeg",
-"WhatsApp Image 2026-03-08 at 13.25.56.jpeg",
-"WhatsApp Image 2026-03-08 at 13.25.57.jpeg",
-"WhatsApp Image 2026-03-08 at 13.25.58.jpeg",
-"WhatsApp Image 2026-03-08 at 13.25.59.jpeg"
-
-]
-
-/* posisi membentuk LOVE */
-
-let positions=[
-
-{top:0,left:110},
-{top:40,left:40},
-{top:40,left:180},
-{top:90,left:10},
-{top:90,left:210},
-{top:160,left:70},
-{top:160,left:150},
-{top:210,left:110}
-
-]
-
-photos.forEach((src,i)=>{
-
-let img=document.createElement("img")
-
-img.src=src
-
-img.style.top=positions[i].top+"px"
-img.style.left=positions[i].left+"px"
-
-img.style.animationDelay=(i*0.3)+"s"
-
-container.appendChild(img)
-
-})
-
+setTimeout(()=>{
 showQuestion()
+},2000)
 
 }
 
