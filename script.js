@@ -198,3 +198,28 @@ setTimeout(typing,80)
 typing()
 
 }
+function showTyping(){
+
+document.getElementById("loveText").innerHTML=""
+
+let text="Aku masih ingin bersama kamu. Jadi... maukah kamu menjadi kekasihku lagi? 💗"
+
+let i=0
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("loveText").innerHTML+=text.charAt(i)
+
+i++
+
+setTimeout(typing,70)
+
+}
+
+}
+
+typing()
+
+}
