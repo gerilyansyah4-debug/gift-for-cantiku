@@ -179,3 +179,18 @@ font-size:30px;
 font-family:"Times New Roman",serif;
 color:pink;
 }
+#photoHeart{
+position:absolute;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+width:300px;
+height:260px;
+}
+
+#photoHeart img{
+position:absolute;
+width:60px;
+height:60px;
+border-radius:10px;
+}
