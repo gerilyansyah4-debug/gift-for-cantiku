@@ -1,9 +1,11 @@
+
 window.addEventListener("click",()=>{
 
 document.getElementById("music").play()
 
 })
-const rain = document.getElementById("rain")
+
+const rain=document.getElementById("rain")
 
 for(let i=0;i<150;i++){
 
@@ -66,13 +68,16 @@ document.querySelector(".center").style.display="none"
 
 document.getElementById("bookContainer").classList.remove("hidden")
 
-const pageFlip = new St.PageFlip(
+const pageFlip=new St.PageFlip(
+
 document.getElementById("book"),
+
 {
 width:420,
 height:520,
 showCover:true
 }
+
 )
 
 pageFlip.loadFromHTML(document.querySelectorAll(".page"))
@@ -97,33 +102,6 @@ showPhotoHeart()
 
 
 
-function showTyping(){
-
-document.getElementById("question2").style.display="none"
-
-document.getElementById("typing").classList.remove("hidden")
-
-let text="Terima kasih sudah kembali lagi denganku 💗"
-
-let i=0
-
-function typing(){
-
-if(i<text.length){
-
-document.getElementById("text").innerHTML+=text.charAt(i)
-
-i++
-
-setTimeout(typing,80)
-
-}
-
-}
-
-typing()
-
-}
 function showPhotoHeart(){
 
 let container=document.getElementById("photoHeart")
@@ -131,6 +109,7 @@ let container=document.getElementById("photoHeart")
 container.classList.remove("hidden")
 
 let photos=[
+
 "WhatsApp Image 2026-03-07 at 23.38.39.jpeg",
 "WhatsApp Image 2026-03-08 at 13.25.51.jpeg",
 "WhatsApp Image 2026-03-08 at 13.25.52.jpeg",
@@ -139,9 +118,11 @@ let photos=[
 "WhatsApp Image 2026-03-08 at 13.25.57.jpeg",
 "WhatsApp Image 2026-03-08 at 13.25.58.jpeg",
 "WhatsApp Image 2026-03-08 at 13.25.59.jpeg"
+
 ]
 
 let positions=[
+
 {top:0,left:120},
 {top:30,left:60},
 {top:30,left:180},
@@ -150,6 +131,7 @@ let positions=[
 {top:140,left:80},
 {top:140,left:160},
 {top:200,left:120}
+
 ]
 
 photos.forEach((src,i)=>{
@@ -170,14 +152,13 @@ showQuestion()
 
 }
 
-typeLoveText()
 
-}
-function typeLoveText(){
 
-document.getElementById("finalText").classList.remove("hidden")
+function showQuestion(){
 
-let text="Apa kamu mau menjadi kekasihku lagi?"
+document.getElementById("finalQuestion").classList.remove("hidden")
+
+let text="Apa kamu mau menjadi kekasihku sekali lagi?"
 
 let i=0
 
@@ -189,7 +170,7 @@ document.getElementById("loveText").innerHTML+=text.charAt(i)
 
 i++
 
-setTimeout(typing,80)
+setTimeout(typing,70)
 
 }
 
@@ -198,11 +179,14 @@ setTimeout(typing,80)
 typing()
 
 }
+
+
+
 function showTyping(){
 
-document.getElementById("loveText").innerHTML=""
+document.getElementById("typing").classList.remove("hidden")
 
-let text="Aku masih ingin bersama kamu. Jadi... maukah kamu menjadi kekasihku lagi? 💗"
+let text="Aku masih sayang kamu. Jadi... maukah kamu kembali bersamaku? 💗"
 
 let i=0
 
@@ -210,7 +194,7 @@ function typing(){
 
 if(i<text.length){
 
-document.getElementById("loveText").innerHTML+=text.charAt(i)
+document.getElementById("text").innerHTML+=text.charAt(i)
 
 i++
 
