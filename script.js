@@ -141,11 +141,34 @@ let photos=[
 "WhatsApp Image 2026-03-08 at 13.25.59.jpeg"
 ]
 
-photos.forEach(src=>{
+let positions=[
+{top:0,left:120},
+{top:30,left:60},
+{top:30,left:180},
+{top:80,left:30},
+{top:80,left:210},
+{top:140,left:80},
+{top:140,left:160},
+{top:200,left:120}
+]
+
+photos.forEach((src,i)=>{
+
 let img=document.createElement("img")
+
 img.src=src
+
+img.style.top=positions[i].top+"px"
+
+img.style.left=positions[i].left+"px"
+
 container.appendChild(img)
+
 })
+
+showQuestion()
+
+}
 
 typeLoveText()
 
