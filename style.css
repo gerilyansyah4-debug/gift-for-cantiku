@@ -129,7 +129,7 @@ font-family:cursive;
 
 #photoHeart{
 position:absolute;
-top:45%;
+top:55%;
 left:50%;
 transform:translate(-50%,-50%);
 width:320px;
@@ -165,4 +165,23 @@ position:absolute;
 bottom:60px;
 width:100%;
 font-size:26px;
+}
+@keyframes flyIn{
+0%{
+transform:scale(0) translateY(-200px);
+opacity:0;
+}
+100%{
+transform:scale(1) translateY(0);
+opacity:1;
+}
+}
+
+#photoHeart img{
+position:absolute;
+width:75px;
+height:75px;
+border-radius:12px;
+object-fit:cover;
+animation:flyIn 1s ease forwards;
 }
