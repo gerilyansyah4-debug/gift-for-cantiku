@@ -1,5 +1,5 @@
+```html
 <!DOCTYPE html>
-
 <html lang="id">
 
 <head>
@@ -28,32 +28,41 @@ left:0;
 z-index:-1;
 }
 
-/* INTRO */
+/* OPENING */
 
-#intro{
+#opening{
 position:absolute;
-font-size:70px;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+#countdown{
+font-size:120px;
 font-weight:bold;
-color:#ff4d6d;
-text-shadow:0 0 20px #ff4d6d;
-animation:fadeIntro 4s forwards;
+text-shadow:0 0 30px pink;
 }
 
-@keyframes fadeIntro{
-0%{opacity:0;transform:scale(0.5);}
-50%{opacity:1;transform:scale(1);}
-100%{opacity:0;}
+#nama{
+display:none;
+font-size:60px;
+color:pink;
+text-shadow:0 0 25px pink;
+margin-top:20px;
 }
 
-/* HALAMAN PEMBUKA */
+/* READY PAGE */
 
-#welcome{
+#ready{
 display:none;
 flex-direction:column;
 align-items:center;
 }
 
-#welcome h1{
+#ready h1{
 font-size:40px;
 margin-bottom:30px;
 }
@@ -69,94 +78,133 @@ background:#ff4d6d;
 color:white;
 cursor:pointer;
 box-shadow:0 0 20px rgba(255,0,100,0.7);
+margin:10px;
 }
 
 button:hover{
 background:#ff3355;
 }
 
-/* HALAMAN PESAN */
+/* HUJAN HATI */
 
-#pesan{
+.pinkHeart{
+position:absolute;
+color:pink;
+font-size:24px;
+animation:fallPink 4s linear infinite;
+}
+
+@keyframes fallPink{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+
+/* BOOK */
+
+#book{
 display:none;
 flex-direction:column;
 align-items:center;
 }
 
-img{
-width:260px;
-max-width:80%;
+.slide{
+display:none;
+flex-direction:column;
+align-items:center;
+}
+
+.slide.active{
+display:flex;
+}
+
+.slide img{
+width:300px;
 border-radius:20px;
+box-shadow:0 0 20px pink;
+}
+
+.slide p{
+font-size:24px;
 margin-top:20px;
-box-shadow:0 0 25px rgba(255,255,255,0.6);
-}
-
-#text{
-font-size:26px;
-max-width:700px;
-white-space:pre-line;
-margin-top:20px;
-}
-
-/* HATI JATUH */
-
-.heart{
-position:absolute;
-color:red;
-font-size:25px;
-animation:fall 5s linear infinite;
-}
-
-@keyframes fall{
-0%{transform:translateY(-10vh);}
-100%{transform:translateY(110vh);}
-}
-
-/* SHOOTING STAR */
-
-.shooting{
-position:absolute;
-width:2px;
-height:100px;
-background:linear-gradient(white,transparent);
-transform:rotate(45deg);
-animation:shoot 1s linear;
-}
-
-@keyframes shoot{
-0%{opacity:1;transform:translate(0,0) rotate(45deg);}
-100%{opacity:0;transform:translate(300px,300px) rotate(45deg);}
 }
 
 </style>
-
 </head>
 
 <body>
 
 <canvas id="stars"></canvas>
 
-<div id="intro">I LOVE YOU ❤️</div>
+<!-- OPENING -->
 
-<!-- HALAMAN PEMBUKA -->
+<div id="opening">
 
-<div id="welcome">
+<div id="countdown">3</div>
 
-<h1>I HAVE A MESSAGE FOR YOU ❤️</h1>
-
-<button onclick="start()">Open it</button>
+<div id="nama">For Cantikuuuuu 💗</div>
 
 </div>
 
-<!-- HALAMAN PESAN -->
+<!-- READY -->
 
-<div id="pesan">
+<div id="ready">
 
+<h1>Are you ready?</h1>
+
+<button onclick="openBook()">YES</button>
+<button id="noBtn">NO</button>
+
+</div>
+
+<!-- BOOK -->
+
+<div id="book">
+
+<div class="slide active">
 <img src="WhatsApp Image 2026-03-07 at 23.38.39.jpeg">
+<p>Kenangan pertama kita ❤️</p>
+</div>
 
-<div id="text"></div>
+<div class="slide">
+<img src="WhatsApp Image 2026-03-08 at 13.25.51.jpeg">
+<p>Aku selalu bahagia kalau sama kamu</p>
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-03-08 at 13.25.52.jpeg">
+<p>Kamu selalu cantik di mataku</p>
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-03-08 at 13.25.53.jpeg">
+<p>Terima kasih sudah bertahan</p>
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-03-08 at 13.25.56.jpeg">
+<p>Aku sayang kamu</p>
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-03-08 at 13.25.57.jpeg">
+<p>Kamu sangat berarti buat aku</p>
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-03-08 at 13.25.58.jpeg">
+<p>Aku tidak mau kehilangan kamu</p>
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-03-08 at 13.25.59.jpeg">
+<p>Mau jadi kekasihku lagi?</p>
+</div>
+
+<button onclick="nextSlide()">Next</button>
 
 </div>
+
+<!-- MUSIK -->
 
 <audio id="music" loop>
 <source src="SZA - Saturn.mp3" type="audio/mpeg">
@@ -164,131 +212,118 @@ animation:shoot 1s linear;
 
 <script>
 
-/* TAMPILKAN HALAMAN WELCOME SETELAH INTRO */
+/* MUSIK */
 
-setTimeout(()=>{
-
-document.getElementById("intro").style.display="none"
-
-document.getElementById("welcome").style.display="flex"
-
-},4000)
-
-/* PESAN */
-
-const message = `For sayangku yang paling cantik sedunia ❤️
-
-Sayang, aku cuma ingin bilang terimakasih.
-Karena kamu masih kasih aku kesempatan,
-kesempatan buat jadi orang yang lebih baik lagi.
-
-Walaupun aku pernah bikin kamu kecewa,
-kamu masih percaya sama aku.
-
-Aku ga mau janji yang aneh-aneh,
-tapi aku bakal selalu berusaha
-jadi yang terbaik buat kamu.
-
-Karena kamu se-worth it itu
-buat diperjuangkan.
-
-Dan untuk semua kesalahanku dulu,
-I am very very sorry.
-
-Terimakasih banyak ya sayang ❤️
-
-Love u more than anything.`
-
-let i=0
-
-function typeText(){
-
-if(i < message.length){
-
-document.getElementById("text").innerHTML += message.charAt(i)
-
-i++
-
-setTimeout(typeText,40)
-
+window.onload=()=>{
+document.getElementById("music").play()
 }
 
-}
+/* HUJAN HATI */
 
-/* START */
-
-function start(){
-
-document.getElementById("welcome").style.display="none"
-
-document.getElementById("pesan").style.display="flex"
-
-const music=document.getElementById("music")
-
-music.currentTime=50
-
-music.play()
-
-typeText()
-
-}
-
-/* HATI JATUH */
-
-function createHeart(){
+function pinkHeart(){
 
 const heart=document.createElement("div")
 
-heart.className="heart"
+heart.className="pinkHeart"
 
-heart.innerHTML="❤️"
+heart.innerHTML="💗"
 
 heart.style.left=Math.random()*100+"vw"
 
 document.body.appendChild(heart)
 
 setTimeout(()=>{
-
 heart.remove()
-
-},5000)
+},4000)
 
 }
 
-setInterval(createHeart,150)
+setInterval(pinkHeart,200)
 
-/* SHOOTING STAR */
+/* COUNTDOWN */
 
-function shootingStar(){
+let num=3
 
-const star=document.createElement("div")
+const timer=setInterval(()=>{
 
-star.className="shooting"
+document.getElementById("countdown").innerText=num
 
-star.style.left=Math.random()*window.innerWidth+"px"
+num--
 
-star.style.top=Math.random()*200+"px"
+if(num<0){
 
-document.body.appendChild(star)
+clearInterval(timer)
+
+document.getElementById("countdown").style.display="none"
+
+document.getElementById("nama").style.display="block"
 
 setTimeout(()=>{
 
-star.remove()
+document.getElementById("opening").style.display="none"
 
-},1000)
+document.getElementById("ready").style.display="flex"
+
+},3000)
 
 }
 
-setInterval(shootingStar,4000)
+},1000)
 
-/* BACKGROUND BINTANG */
+/* NO KABUR */
+
+const noBtn=document.getElementById("noBtn")
+
+noBtn.addEventListener("mouseover",()=>{
+
+noBtn.style.position="absolute"
+
+noBtn.style.left=Math.random()*80+"%"
+
+noBtn.style.top=Math.random()*80+"%"
+
+})
+
+/* OPEN BOOK */
+
+function openBook(){
+
+document.getElementById("ready").style.display="none"
+
+document.getElementById("book").style.display="flex"
+
+}
+
+/* SLIDE */
+
+let slides=document.querySelectorAll(".slide")
+
+let currentSlide=0
+
+function nextSlide(){
+
+slides[currentSlide].classList.remove("active")
+
+currentSlide++
+
+if(currentSlide >= slides.length){
+
+alert("Cerita kita belum selesai ❤️")
+
+return
+
+}
+
+slides[currentSlide].classList.add("active")
+
+}
+
+/* BINTANG */
 
 const canvas=document.getElementById("stars")
-
 const ctx=canvas.getContext("2d")
 
 canvas.width=window.innerWidth
-
 canvas.height=window.innerHeight
 
 let stars=[]
@@ -296,15 +331,10 @@ let stars=[]
 for(let i=0;i<200;i++){
 
 stars.push({
-
 x:Math.random()*canvas.width,
-
 y:Math.random()*canvas.height,
-
 size:Math.random()*2,
-
 speed:Math.random()*0.3
-
 })
 
 }
@@ -318,19 +348,14 @@ ctx.fillStyle="white"
 stars.forEach(star=>{
 
 ctx.beginPath()
-
 ctx.arc(star.x,star.y,star.size,0,Math.PI*2)
-
 ctx.fill()
 
 star.y+=star.speed
 
 if(star.y>canvas.height){
-
 star.y=0
-
 star.x=Math.random()*canvas.width
-
 }
 
 })
@@ -345,3 +370,4 @@ drawStars()
 
 </body>
 </html>
+```
