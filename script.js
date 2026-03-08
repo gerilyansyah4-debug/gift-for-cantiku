@@ -119,3 +119,29 @@ setTimeout(typing,80)
 typing()
 
 }
+function showPhotoHeart(){
+
+let container=document.getElementById("photoHeart")
+
+container.classList.remove("hidden")
+
+let photos=[
+"WhatsApp Image 2026-03-07 at 23.38.39.jpeg",
+"WhatsApp Image 2026-03-08 at 13.25.51.jpeg",
+"WhatsApp Image 2026-03-08 at 13.25.52.jpeg",
+"WhatsApp Image 2026-03-08 at 13.25.53.jpeg",
+"WhatsApp Image 2026-03-08 at 13.25.56.jpeg",
+"WhatsApp Image 2026-03-08 at 13.25.57.jpeg",
+"WhatsApp Image 2026-03-08 at 13.25.58.jpeg",
+"WhatsApp Image 2026-03-08 at 13.25.59.jpeg"
+]
+
+photos.forEach(src=>{
+let img=document.createElement("img")
+img.src=src
+container.appendChild(img)
+})
+
+typeLoveText()
+
+}
