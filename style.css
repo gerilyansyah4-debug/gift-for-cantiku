@@ -28,8 +28,9 @@ color:pink;
 }
 
 #bigHeart{
-font-size:150px;
+font-size:220px;
 animation:beat 1s infinite;
+margin-top:20px;
 }
 
 @keyframes beat{
