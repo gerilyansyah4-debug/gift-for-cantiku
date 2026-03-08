@@ -69,8 +69,8 @@ document.getElementById("bookContainer").classList.remove("hidden")
 const pageFlip = new St.PageFlip(
 document.getElementById("book"),
 {
-width:300,
-height:400,
+width:420,
+height:520,
 showCover:true
 }
 )
