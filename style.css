@@ -28,7 +28,7 @@ color:pink;
 }
 
 #bigHeart{
-font-size:220px;
+font-size:240px;
 animation:beat 1s infinite;
 margin-top:20px;
 }
@@ -68,7 +68,6 @@ pointer-events:none;
 .heart{
 position:absolute;
 color:pink;
-font-size:20px;
 animation:fall linear infinite;
 }
 
@@ -90,6 +89,13 @@ left:50%;
 transform:translate(-50%,-50%);
 }
 
+/* ukuran buku lebih besar */
+
+#book{
+width:500px;
+height:600px;
+}
+
 .page{
 background:white;
 padding:20px;
@@ -101,13 +107,13 @@ border-radius:10px;
 }
 
 .cover{
-font-size:30px;
+font-size:32px;
 color:#ff4da6;
 }
 
 .page img{
-width:250px;
-height:300px;
+width:300px;
+height:360px;
 object-fit:cover;
 border-radius:10px;
 margin-bottom:10px;
@@ -119,27 +125,37 @@ color:black;
 font-family:cursive;
 }
 
+/* PHOTO LOVE */
+
 #photoHeart{
 position:absolute;
-top:40%;
+top:45%;
 left:50%;
 transform:translate(-50%,-50%);
-width:300px;
-height:260px;
+width:320px;
+height:280px;
+position:relative;
 }
 
 #photoHeart img{
 position:absolute;
-width:70px;
-height:70px;
-border-radius:10px;
+width:75px;
+height:75px;
+border-radius:12px;
+object-fit:cover;
+animation:pop 1s ease;
+}
+
+@keyframes pop{
+0%{transform:scale(0);}
+100%{transform:scale(1);}
 }
 
 #finalQuestion{
 position:absolute;
-bottom:120px;
+bottom:140px;
 width:100%;
-font-size:28px;
+font-size:30px;
 font-family:"Times New Roman",serif;
 color:pink;
 }
