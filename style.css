@@ -153,3 +153,29 @@ font-size:16px;
 color:black;
 font-family:cursive;
 }
+#photoHeart{
+position:absolute;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+display:flex;
+flex-wrap:wrap;
+width:300px;
+justify-content:center;
+gap:5px;
+}
+
+#photoHeart img{
+width:60px;
+height:60px;
+border-radius:10px;
+}
+
+#finalText{
+position:absolute;
+bottom:120px;
+width:100%;
+font-size:30px;
+font-family:"Times New Roman",serif;
+color:pink;
+}
