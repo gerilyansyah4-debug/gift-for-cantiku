@@ -92,10 +92,9 @@ transform:translate(-50%,-50%);
 /* ukuran buku */
 
 #book{
-width:320px;
-height:420px;
+width:380px;
+height:480px;
 }
-
 .page{
 background:white;
 padding:20px;
