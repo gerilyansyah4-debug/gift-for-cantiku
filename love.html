@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For You 💗</title>
+
+<style>
+
+body{
+margin:0;
+background:black;
+color:white;
+font-family:Arial;
+overflow:hidden;
+text-align:center;
+}
+
+/* teks tengah */
+
+.center{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+/* hujan love */
+
+#rain{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+}
+
+.heart{
+position:absolute;
+color:pink;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh);
+opacity:1;
+}
+100%{
+transform:translateY(100vh);
+opacity:0;
+}
+}
+
+h1{
+font-size:40px;
+color:pink;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="rain"></div>
+
+<div class="center">
+
+<h1>
+Aku masih sayang kamu 💗
+<br><br>
+Maukah kamu kembali bersamaku?
+</h1>
+
+</div>
+
+<script>
+
+/* hujan love */
+
+const rain=document.getElementById("rain")
+
+for(let i=0;i<150;i++){
+
+let heart=document.createElement("div")
+
+heart.className="heart"
+
+heart.innerHTML="💗"
+
+heart.style.left=Math.random()*100+"vw"
+
+heart.style.animationDuration=(Math.random()*3+2)+"s"
+
+heart.style.fontSize=(Math.random()*20+10)+"px"
+
+rain.appendChild(heart)
+
+}
+
+</script>
+
+</body>
+</html>
