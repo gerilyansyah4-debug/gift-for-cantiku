@@ -144,3 +144,8 @@ setTimeout(typing,70)
 typing()
 
 }
+function openLove(){
+
+window.open("love.html","_blank")
+
+}
