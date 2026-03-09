@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
 
@@ -18,8 +19,6 @@ overflow:hidden;
 text-align:center;
 }
 
-/* teks tengah */
-
 .center{
 position:absolute;
 top:50%;
@@ -27,8 +26,6 @@ left:50%;
 transform:translate(-50%,-50%);
 width:80%;
 }
-
-/* hujan love */
 
 #rain{
 position:fixed;
@@ -46,17 +43,9 @@ animation:fall linear infinite;
 }
 
 @keyframes fall{
-0%{
-transform:translateY(-10vh);
-opacity:1;
+0%{transform:translateY(-10vh);opacity:1;}
+100%{transform:translateY(100vh);opacity:0;}
 }
-100%{
-transform:translateY(100vh);
-opacity:0;
-}
-}
-
-/* kelopak bunga */
 
 .flower{
 position:absolute;
@@ -66,17 +55,9 @@ animation:flowerFall linear infinite;
 }
 
 @keyframes flowerFall{
-0%{
-transform:translateY(-10vh) rotate(0deg);
-opacity:1;
+0%{transform:translateY(-10vh) rotate(0deg);opacity:1;}
+100%{transform:translateY(110vh) rotate(360deg);opacity:0;}
 }
-100%{
-transform:translateY(110vh) rotate(360deg);
-opacity:0;
-}
-}
-
-/* sparkle */
 
 .sparkle{
 position:absolute;
@@ -102,6 +83,10 @@ line-height:1.6;
 
 <body>
 
+<audio autoplay loop>
+<source src="akad.mp3" type="audio/mpeg">
+</audio>
+
 <div id="rain"></div>
 
 <div class="center">
@@ -110,86 +95,48 @@ line-height:1.6;
 
 <script>
 
-/* HUJAN LOVE */
-
 const rain=document.getElementById("rain")
 
 for(let i=0;i<120;i++){
-
 let heart=document.createElement("div")
-
 heart.className="heart"
-
 heart.innerHTML="💗"
-
 heart.style.left=Math.random()*100+"vw"
-
 heart.style.animationDuration=(Math.random()*3+2)+"s"
-
 heart.style.fontSize=(Math.random()*20+10)+"px"
-
 rain.appendChild(heart)
-
 }
-
-/* BUNGA JATUH */
 
 for(let i=0;i<30;i++){
-
 let flower=document.createElement("div")
-
 flower.className="flower"
-
 flower.innerHTML="🌸"
-
 flower.style.left=Math.random()*100+"vw"
-
 flower.style.animationDuration=(Math.random()*5+5)+"s"
-
 flower.style.fontSize=(Math.random()*15+15)+"px"
-
 document.body.appendChild(flower)
-
 }
-
-/* SPARKLE */
 
 for(let i=0;i<20;i++){
-
 let sparkle=document.createElement("div")
-
 sparkle.className="sparkle"
-
 sparkle.innerHTML="✨"
-
 sparkle.style.left=Math.random()*100+"vw"
-
 sparkle.style.top=Math.random()*100+"vh"
-
 sparkle.style.fontSize="18px"
-
 document.body.appendChild(sparkle)
-
 }
-
-/* TYPING TEXT */
 
 let message="Aku masih sayang kamu... 💗\n\nMaukah kamu kembali bersamaku?"
 
 let i=0
 
 function typing(){
-
 if(i<message.length){
-
 document.getElementById("text").innerHTML+=message.charAt(i)
-
 i++
-
 setTimeout(typing,60)
-
 }
-
 }
 
 typing()
