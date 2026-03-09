@@ -93,11 +93,10 @@ showQuestion()
 
 function showQuestion(){
 
-let q=document.getElementById("finalQuestion")
+let q = document.getElementById("finalQuestion")
 
 q.classList.remove("hidden")
 q.style.display="flex"
-
 let text="Apakah kamu mau menjadi kekasihku sekali lagi?"
 
 let i=0
