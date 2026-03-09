@@ -1,7 +1,3 @@
-window.addEventListener("click",()=>{
-document.getElementById("music").play()
-})
-
 const rain=document.getElementById("rain")
 
 for(let i=0;i<150;i++){
@@ -41,8 +37,6 @@ document.getElementById("ready").classList.remove("hidden")
 
 },1000)
 
-
-
 function openBook(){
 
 document.querySelector(".center").style.display="none"
@@ -75,8 +69,6 @@ showFlowers()
 
 }
 
-
-
 function showFlowers(){
 
 let flower=document.getElementById("flowerBox")
@@ -89,14 +81,13 @@ showQuestion()
 
 }
 
-
-
 function showQuestion(){
 
 let q = document.getElementById("finalQuestion")
 
 q.classList.remove("hidden")
 q.style.display="flex"
+
 let text="Apakah kamu mau menjadi kekasihku sekali lagi?"
 
 let i=0
@@ -118,8 +109,6 @@ setTimeout(typing,70)
 typing()
 
 }
-
-
 
 function showTyping(){
 
@@ -146,8 +135,15 @@ setTimeout(typing,70)
 typing()
 
 }
+
 function openLove(){
 
 window.open("love.html","_blank")
+
+}
+
+function noAnswer(){
+
+alert("Coba pikir lagi yaa 💗")
 
 }
