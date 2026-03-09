@@ -110,40 +110,10 @@ typing()
 
 }
 
-function showTyping(){
-
-document.getElementById("typing").classList.remove("hidden")
-
-let text="Aku masih sayang kamu. Jadi... maukah kamu kembali bersamaku? 💗"
-
-let i=0
-
-function typing(){
-
-if(i<text.length){
-
-document.getElementById("text").innerHTML+=text.charAt(i)
-
-i++
-
-setTimeout(typing,70)
-
-}
-
-}
-
-typing()
-
-}
-
 function openLove(){
-
 window.open("love.html","_blank")
-
 }
 
 function noAnswer(){
-
 alert("Coba pikir lagi yaa 💗")
-
 }
