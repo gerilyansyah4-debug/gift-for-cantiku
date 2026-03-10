@@ -2,7 +2,7 @@ function startMusic(){
 
 let music = document.getElementById("music")
 
-music.currentTime = 190   // mulai dari menit 3:10
+music.currentTime = 65
 
 music.play().catch(()=>{})
 
