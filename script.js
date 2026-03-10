@@ -97,7 +97,7 @@ let q = document.getElementById("finalQuestion")
 q.classList.remove("hidden")
 q.style.display="flex"
 
-let text="will you be my girlfriend again??"
+let text="would you like to be my girlfriend again?"
 
 let i=0
 
