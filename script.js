@@ -120,7 +120,12 @@ typing()
 }
 
 function openLove(){
-window.open("love.html","_blank")
+
+document.getElementById("finalQuestion").style.display="none"
+document.getElementById("flowerBox").style.display="none"
+
+showTyping()
+
 }
 
 function noAnswer(){
