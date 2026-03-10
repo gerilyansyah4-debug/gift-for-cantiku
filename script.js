@@ -1,6 +1,11 @@
 function startMusic(){
+
 let music = document.getElementById("music")
+
+music.currentTime = 190   // mulai dari menit 3:10
+
 music.play().catch(()=>{})
+
 }
 const rain=document.getElementById("rain")
 
