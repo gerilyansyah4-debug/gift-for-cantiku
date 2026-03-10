@@ -7,6 +7,7 @@ music.currentTime = 65
 music.play().catch(()=>{})
 
 }
+
 const rain=document.getElementById("rain")
 
 for(let i=0;i<150;i++){
@@ -125,6 +126,32 @@ document.getElementById("finalQuestion").style.display="none"
 document.getElementById("flowerBox").style.display="none"
 
 showTyping()
+
+}
+
+function showTyping(){
+
+document.getElementById("typing").classList.remove("hidden")
+
+let text="terimakasiii ya wes mau nerimo aku sekali neh, aku ga janji , tapi aku selalu berusaha dadi seng terbaik teko sebelum' e, aku berusaha gabakal ngulangi kesalahan kesalahan seng wes pernah tabuat, nek aku seumpama besok enek seng kurang pas bagi amu, ojo ragu gae negur, aku suka ditegur amu, aku suka nek amu mengevaluasi aku, ben aku iso dadi seng mbo pengeni sayang, sekali neh, aku banyak' terimakasih, loveyoumoree than anything sayang... ❤️"
+
+let i=0
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("text").innerHTML+=text.charAt(i)
+
+i++
+
+setTimeout(typing,70)
+
+}
+
+}
+
+typing()
 
 }
 
