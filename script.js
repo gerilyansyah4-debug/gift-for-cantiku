@@ -1,3 +1,7 @@
+function startMusic(){
+let music = document.getElementById("music")
+music.play().catch(()=>{})
+}
 const rain=document.getElementById("rain")
 
 for(let i=0;i<150;i++){
