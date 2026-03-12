@@ -171,5 +171,5 @@ typing()
 }
 
 function noAnswer(){
-alert("Coba pikir lagi yaa 💗")
+alert("meksooo kok wleee")
 }
