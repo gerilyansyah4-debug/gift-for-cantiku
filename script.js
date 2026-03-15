@@ -19,6 +19,25 @@ heart.style.animationDuration=(Math.random()*3+2)+"s"
 heart.style.fontSize=(Math.random()*20+10)+"px"
 rain.appendChild(heart)
 }
+for(let i=0;i<60;i++){
+
+let sparkle=document.createElement("div")
+
+sparkle.className="sparkle"
+
+sparkle.innerHTML="✨"
+
+sparkle.style.left=Math.random()*100+"vw"
+
+sparkle.style.animationDuration=(Math.random()*4+3)+"s"
+
+sparkle.style.fontSize=(Math.random()*10+5)+"px"
+
+sparkle.style.animationDelay=Math.random()*5+"s"
+
+rain.appendChild(sparkle)
+
+}
 
 let count=3
 let countdown=document.getElementById("countdown")
