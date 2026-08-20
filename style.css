@@ -309,3 +309,92 @@ line-height:1.6;
 }
 
 }
+/* ============================= */
+/* TRANSISI HALUS */
+/* ============================= */
+
+#title{
+animation:fadeIn 1.5s ease;
+}
+
+#bigHeart{
+animation:beat 1s infinite, fadeIn 1.5s ease;
+}
+
+#ready{
+animation:fadeIn 1.2s ease;
+}
+
+#bookContainer{
+animation:bookAppear 1s ease;
+}
+
+#flowerBox{
+animation:flowerAppear 1.5s ease;
+}
+
+#finalQuestion{
+animation:questionAppear 1.2s ease;
+}
+
+#typing{
+animation:messageAppear 1.5s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+}
+
+@keyframes bookAppear{
+from{
+opacity:0;
+transform:translate(-50%,-45%) scale(.95);
+}
+
+to{
+opacity:1;
+transform:translate(-50%,-50%) scale(1);
+}
+}
+
+@keyframes flowerAppear{
+from{
+opacity:0;
+transform:translate(-50%,-40%) scale(.7);
+}
+
+to{
+opacity:1;
+transform:translate(-50%,-50%) scale(1);
+}
+}
+
+@keyframes questionAppear{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes messageAppear{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
