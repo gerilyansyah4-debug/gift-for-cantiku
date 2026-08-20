@@ -240,3 +240,72 @@ opacity:0;
 }
 
 }
+/* ============================= */
+/* RESPONSIVE UNTUK HP */
+/* ============================= */
+
+@media (max-width:600px){
+
+#countdown{
+font-size:80px;
+}
+
+#title{
+font-size:42px;
+}
+
+#bigHeart{
+font-size:150px;
+}
+
+#bookContainer{
+width:95vw;
+}
+
+#book{
+width:90vw;
+height:auto;
+}
+
+.page img{
+width:60vw;
+height:45vh;
+max-width:260px;
+max-height:320px;
+}
+
+.caption{
+font-size:14px;
+}
+
+#flowerBox{
+font-size:60px;
+}
+
+#loveText{
+font-size:24px;
+padding:0 20px;
+}
+
+#finalQuestion{
+bottom:30px;
+}
+
+button{
+padding:12px 30px;
+font-size:18px;
+}
+
+#typing{
+bottom:30px;
+padding:0 20px;
+font-size:20px;
+}
+
+#text{
+max-width:90vw;
+margin:auto;
+line-height:1.6;
+}
+
+}
